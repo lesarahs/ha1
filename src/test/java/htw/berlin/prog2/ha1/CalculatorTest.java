@@ -89,6 +89,7 @@ class CalculatorTest {
     }
 
 //Test
+//testUmschaltNegative bereits grün
  void testUmschaltNegative() {
         Calculator calc = new Calculator();
 
