@@ -88,7 +88,47 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+//Test
+ void testUmschaltNegative() {
+        Calculator calc = new Calculator();
 
-    //TODO hier weitere Tests erstellen
+        calc.pressDigitKey(5);
+        calc.pressNegativeKey();
+
+        String expected = "-5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+void testClearOnceKeepsMemory(){
+    Calculator calc = new Calculator();
+    calc.pressDigitKey(2);
+    calc.pressBinaryOperationKey("+");
+    calc.pressDigitKey(3);
+
+    calc.pressClearKey();
+
+    calc.pressDigitKey(4);
+    calc.pressEqualsKey();
+
+    String expected ="6";
+    String actual =calc.readScreen();
+
+    assertEquals(expected, actual);
+}
+void testEqualsWithoutOperationDoesNothing() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+    
 }
 
