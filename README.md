@@ -1,6 +1,6 @@
 # Hausaufgabe 1
 
-Deadline für Abgabe per Pull Request: 26.10.2025 23:59 Uhr. Außerdem ist zusätzlich eine persönliche Abnahme in der von Ihnen belegten Übungsgruppe notwendig, um zu bestehen. Bei unentschuldigtem Fehlen in der auf die Deadline folgenden Übung, wird die Hausaufgabe als nicht bestanden bewertet. 
+Deadline für Abgabe per Pull Request: 26.04.2026 23:59 Uhr. Außerdem ist zusätzlich eine persönliche Abnahme in der von Ihnen belegten Übungsgruppe notwendig, um zu bestehen. Bei unentschuldigtem Fehlen in der auf die Deadline folgenden Übung, wird die Hausaufgabe als nicht bestanden bewertet. 
 
 ## Aufgabenstellung
 
