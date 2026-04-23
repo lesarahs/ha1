@@ -90,5 +90,72 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    @Test
+    @DisplayName("should display single digit after pressing digit key")
+    void testSingleDigitInput(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+
+        String expected = "1";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+    @Test 
+    @DisplayName("should add two decimal numbers correctly")
+    void testDecimalAddition(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressDotKey();
+        calc.pressDigitKey(7);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(1);
+        calc.pressDotKey();
+        calc.pressDigitKey(3);
+        calc.pressEqualsKey();
+        
+        String expected ="4";
+        String actual = calc.readScreen();
+
+
+        assertEquals(expected, actual);
+        
+    }
+    @Test
+    @DisplayName ("should keep memory if only cleared once")
+    void testClearOnceKeepsMemory(){
+    Calculator calc = new Calculator();
+    calc.pressDigitKey(2);
+    calc.pressBinaryOperationKey("+");
+    calc.pressDigitKey(3);
+
+    calc.pressClearKey();
+
+    calc.pressDigitKey(4);
+    calc.pressEqualsKey();
+
+    String expected ="6";
+    String actual =calc.readScreen();
+
+    assertEquals(expected, actual);
+}
+    
+
+    @Test
+    @DisplayName("should handle equals key when no operation was entered")
+    void testEqualsWithoutOperation() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
 }
 

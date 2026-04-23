@@ -13,6 +13,10 @@ public class Calculator {
     private double latestValue;
 
     private String latestOperation = "";
+    public static void main(String[] args) {
+    Calculator calc = new Calculator();
+    System.out.println("Calculator initialized. Screen: " + calc.readScreen());
+    }
 
     /**
      * @return den aktuellen Bildschirminhalt als String
@@ -130,4 +134,5 @@ public class Calculator {
         if(screen.endsWith(".0")) screen = screen.substring(0,screen.length()-2);
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
     }
+
 }
