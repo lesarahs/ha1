@@ -13,6 +13,11 @@ public class Calculator {
     private double latestValue;
 
     private String latestOperation = "";
+
+    private boolean lastClearScreenonly = false;
+    private boolean startNewNumber = true;
+    private double lastOperand = 0.0;
+    private boolean hasLastOperand = false;
     public static void main(String[] args) {
     Calculator calc = new Calculator();
     System.out.println("Calculator initialized. Screen: " + calc.readScreen());
@@ -49,10 +54,21 @@ public class Calculator {
      * im Ursprungszustand ist.
      */
     public void pressClearKey() {
-        screen = "0";
-        latestOperation = "";
-        latestValue = 0.0;
-    }
+      if (!screen.equals("0") && !lastClearScreenonly) {
+    screen = "0";
+    lastClearScreenonly = true;
+} else {
+    // zweites drücken kompletter reset
+    screen = "0";
+    latestOperation = "";
+    latestValue = 0.0;
+
+    lastOperand = 0.0;        
+    hasLastOperand = false;  
+
+    lastClearScreenonly = false;
+    startNewNumber = false;}
+}
 
     /**
      * Empfängt den Wert einer gedrückten binären Operationstaste, also eine der vier Operationen
